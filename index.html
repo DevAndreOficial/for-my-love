@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz 1º Mês — Para a minha baby</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#141516;--accent:#ff6b81;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;line-height:1.5;color:#e6eef8;background:linear-gradient(180deg,#071021 0%, #071829 60%);-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:32px auto;padding:24px}
+
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    header h1{margin:0;font-size:20px}
+    header p{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+    nav button{background:transparent;border:1px solid transparent;padding:8px 12px;border-radius:10px;color:#cfe6ff;cursor:pointer}
+    nav button.active{background:linear-gradient(90deg,var(--accent),#ff9fb3);color:white;border:1px solid rgba(255,255,255,0.06);box-shadow:0 6px 20px rgba(255,107,129,0.12)}
+
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+
+    .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .hero .photo{flex:0 0 180px;height:180px;border-radius:14px;overflow:hidden;background:var(--glass);display:flex;align-items:center;justify-content:center}
+    .hero .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero .text{flex:1;min-width:200px}
+    .hero h2{margin:0 0 6px 0;font-size:22px}
+    .hero p{margin:0;color:var(--muted)}
+    .big-heart{font-size:28px;margin-top:12px;color:var(--accent);display:inline-block}
+
+    section{margin-top:18px}
+    h3{margin:4px 0 10px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+    .gallery img{width:100%;height:100px;object-fit:cover;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:0.3s}
+    .gallery img:hover{transform:scale(1.05);border-color:rgba(255,255,255,0.06)}
+
+    .video-container{position:relative;max-width:800px;margin:24px auto;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .video-container video{width:100%;display:block}
+
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.8);z-index:50}
+    .modal.open{display:flex}
+    .modal .modal-card{max-width:860px;width:94%;border-radius:12px;overflow:hidden}
+    .modal img, .modal video{width:100%;height:auto;display:block;border-radius:12px}
+
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media(max-width:760px){.hero{flex-direction:column}.hero .photo{width:120px;height:120px}}
+
+    .fade-in{animation:fade .6s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="fade-in">
+      <div class="logo">1M</div>
+      <div>
+        <h1>Feliz 1º Mês — Para a minha Star</h1>
+        <p style="color: wheat;">Um presente feito por mim. Com amor, tempo e código.</p>
+        <h3 style="color: pink;">Moreco</h3>
+      </div>
+    </header>
+
+    <nav class="fade-in">
+      <button class="active" data-target="home">Início</button>
+      <button data-target="sobre">Nossa História</button>
+      <button data-target="ela">Sobre Ela</button>
+      <button data-target="primeiro">Primeiro Momento</button>
+      <button data-target="carta">Carta</button>
+      <button data-target="galeria">Galeria</button>
+    </nav>
+
+    <!-- HOME -->
+    <main class="card fade-in" id="home">
+      <div class="hero">
+        <div class="photo" id="photo-hero">
+          <img src="images/minha-be.jpg" alt="Nós juntos" />
+        </div>
+        <div class="text">
+          <h2>Hoje completamos 1 mês — e já sinto que te conheço há muito tempo</h2>
+          <p>Não tenho muito material agora, mas tenho tempo, dedicação e um coração inteiro para te dar. Este site é um abraço digital, um lugar onde guardo memórias e agradecimentos.</p>
+          <div class="big-heart">❤️ Eu te amo</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- SOBRE -->
+    <section class="card" id="sobre" style="display:none">
+      <h3>Nossa História</h3>
+      <div class="grid">
+        <div>
+          <p>Em apenas um mês vivemos pequenos momentos que já significam muito: conversas até tarde, risos fáceis, olhares que dizem mais do que palavras. Tu me mostraste que crescer ao lado de alguém é possível. 
+            <br><br>
+          <a href="historia-de-amor.html">História completa</a></p>
+        </div>
+        <div>
+          <p style="color:var(--muted)">Fotos:</p>
+          <div class="gallery">
+            <img src="images/minha-be.jpg" alt="foto 1" data-full="images/minha-be.jpg">
+            <img src="images/img2.webp" alt="foto 2" data-full="images/img2.webp">
+            <img src="images/ela4.webp" alt="foto 3" data-full="images/ela4.webp">
+          </div>
+        </div>
+        <div class="full">
+          <p style="margin-top:8px; color: white;">Que este seja o primeiro de muitos meses. Obrigado por existires e por me inspirares a ser melhor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIMEIRO MOMENTO COM VÍDEO -->
+    <section class="card" id="primeiro" style="display:none">
+      <h3>O Nosso Primeiro Encontro</h3>
+      <div class="video-container" style="height: 500px;">
+        <video controls poster="images/primeiro-momento-poster.jpg" style="height: 100%;">
+          <source src="videos/video.mp4 " type="video/mp4">
+        </video>
+      </div>
+      <p>Apesar de caido tanto...<br><strong>Aqui começou a nossa história.</strong></p>
+      <small>Aviso: se fores contar para alguém sobre este dia, não conta esta parte...</small>
+    </section>
+
+    <!-- ELA -->
+    <section class="card" id="ela" style="display:none">
+      <h3>Sobre Ela</h3>
+      <p>Admiro o teu sorriso, a tua força e a forma como cuidas das pessoas. És luz nos meus dias e motivo para eu querer crescer.</p>
+    </section>
+
+    <!-- CARTA -->
+    <section class="card" id="carta" style="display:none">
+      <h3>Uma carta para ti</h3>
+      <p>Querida,</p>
+      <p>Sei que talvez estivesses à espera de um presente comprado. Queria mesmo dar-te algo material, mas hoje o que posso oferecer é isto: o meu tempo, a minha atenção e esta surpresa feita com as minhas próprias mãos.</p>
+      <p>Peço desculpa por não ter algo físico para te entregar, mas prometo que no futuro vou celebrar-te como mereces. Por agora, aceita este site — ele guarda o meu agradecimento, as memórias e a certeza de que estou a começar a amar-te de verdade.</p>
+      <p>Com carinho,</p>
+      <p><strong>— Andre</strong></p>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="card" id="galeria" style="display:none">
+      <h3>Galeria</h3>
+      <p>Clica numa foto para abrir em tamanho maior.</p>
+      <div class="gallery" id="gallery">
+        <img src="images/ela1.jpg" alt="foto 1" data-full="images/ela1.jpg">
+        <img src="images/ela2.jpg" alt="foto 2" data-full="images/ela2.jpg">
+        <img src="images/ela3.webp" alt="foto 3" data-full="images/ela3.webp">
+        <img src="images/eu1.jpg" alt="foto 1" data-full="images/eu1.jpg">
+        <img src="images/eu2.jpg" alt="foto 2" data-full="images/eu2.jpg">
+        <img src="images/eu3.jpg" alt="foto 3" data-full="images/eu3.jpg"">
+      </div>
+    </section>
+
+    <footer class="card" style="margin-top:16px">
+      <p style="color: white;">Obrigado por estares comigo. 🎈</p>
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <img src="" alt="ampliada" id="modal-img">
+    </div>
+  </div>
+
+  <script>
+    const navButtons = document.querySelectorAll('nav button');
+    const sections = ['home','sobre','ela','primeiro','carta','galeria'];
+    navButtons.forEach(btn=>btn.addEventListener('click',()=>{
+      navButtons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.dataset.target;
+      sections.forEach(s=>document.getElementById(s).style.display = (s===target)?'block':'none');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }));
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    document.querySelectorAll('.gallery img').forEach(img=>{
+      img.addEventListener('click',()=>{
+        modal.classList.add('open');
+        modalImg.src = img.dataset.full || img.src;
+      })
+    });
+    modal.addEventListener('click', ()=> modal.classList.remove('open'));
+  </script>
+</body>
+</html>
